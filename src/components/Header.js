@@ -1,10 +1,10 @@
 import React from "react";
-import "./styles.css";
+import "../styles.css";
 
 const Header = () => {
   return (
     <div className="header">
-      <h2>React To-Do App</h2>
+      <h2>/react-todo</h2>
     </div>
   );
 };

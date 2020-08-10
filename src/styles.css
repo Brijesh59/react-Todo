@@ -1,20 +1,22 @@
 body {
-  background: linear-gradient(to right, #7aa1d2, #dbd4b4, #cc95c0);
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
-  margin-top: 5%;
   font-family: "Raleway", sans-serif;
 }
 
 .header {
-  padding-top: 10px;
-  color: #2980b9;
+  background-color: #95A5A6;
+  padding: 15px;
+  color: #fff;
   min-height: 50px;
   max-height: auto;
   line-height: 2;
+  font-size: 1.5rem;
 }
 .header h2 {
   display: inline;
@@ -22,21 +24,33 @@ body {
 
 input {
   box-sizing: border-box;
-  height: 3em;
-  font-family: "Raleway", sans-serif;
+  /* height: 5em; */
+  font-family: "Roboto", sans-serif;
   outline: none;
+  background-color: rgba(242, 240, 240, 24%);
 }
 
 li {
   list-style-type: none;
-  width: 300px;
-  margin: 5px auto;
-  background: #e8e8e8;
+  width: 350px;
+  margin: 15px auto;
+  background-color: rgba(242, 240, 240, 24%);
+  border: 2px solid #DBD7D7;
+  border-radius: 5px;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 form > input {
-  width: 300px;
-  padding: 10px;
+  margin-top: 20px;
+  width: 350px;
+  padding: 10px 20px;
+  border: 2px solid #DBD7D7;
+  border-radius: 5px;
+  font-size: 25px;
+  color:#747574;
 }
 
 form > input:focus {
@@ -44,14 +58,67 @@ form > input:focus {
 }
 
 li > input {
-  width: 250px;
-  padding: 10px 10px 10px 0px;
+  padding: 10px 10px 10px 15px;
+  margin-left: 20px;
   transition: 0.4s;
   border: none;
-  background: #e8e8e8;
+  background-color: rgba(242, 240, 240, 24%);
+  font-size: 25px;
 }
 
 ::selection {
   color: white;
   background: #2980b9;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  position: relative;
+}
+
+label::before {
+  content: "";
+  background: url("assets/check-circle.svg");
+  background-position: center;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  margin-left: 15px;
+  left: -15px;
+  top: -15px;
+  transform: scale(0) rotateZ(180deg);
+  transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+
+input[type="checkbox"]:checked + label::before {
+  transform: scale(1) rotateZ(0deg);
+}
+
+label::after {
+  content: "";
+  border: 2px solid #2980b9;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 2px;
+  top: -14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+  form > input {
+    width: 85%;
+  }
+  li {
+    width: 85%;
+  }
+  li > input {
+    width: 80%;
+  }
 }
